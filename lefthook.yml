@@ -1,5 +1,7 @@
 pre-push:
-  format:
-    run: sh ./scripts/format.sh
-  lint:
-    run: sh ./scripts/lint.sh
+  parallel: true
+  commands:
+    format:
+      run: sh ./scripts/format.sh
+    lint:
+      run: sh ./scripts/lint.sh
