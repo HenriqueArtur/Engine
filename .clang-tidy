@@ -1,0 +1,10 @@
+Checks: >
+  -*,
+  readability-*,
+  performance-*,
+  bugprone-*,
+  cppcoreguidelines-*,
+  modernize-avoid-auto
+
+HeaderFilterRegex: '^src/.*'
+FormatStyle: file

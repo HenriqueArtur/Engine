@@ -1,0 +1,50 @@
+# Build directories
+/build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Compiled object files
+*.o
+*.obj
+*.lo
+*.slo
+
+# Compiled binary files
+*.out
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+
+# IDE-specific files
+.vscode/
+.idea/
+*.swp
+
+# Generated files
+compile_commands.json
+*.cmake
+*.manifest
+
+# Dependency directories
+vcpkg_installed/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.old
+*.orig
+*.rej
+*.sublime-workspace
+
+# System files
+.DS_Store
+Thumbs.db
