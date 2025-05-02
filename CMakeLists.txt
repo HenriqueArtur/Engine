@@ -6,17 +6,17 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-# Add vcpkg toolchain if not already set
-if(NOT DEFINED CMAKE_TOOLCHAIN_FILE)
-    set(CMAKE_TOOLCHAIN_FILE "${CMAKE_SOURCE_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake"
-        CACHE STRING "Vcpkg toolchain file")
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE Release CACHE STRING "Choose the build type (e.g., Debug, Release)" FORCE)
 endif()
+
+include(${CMAKE_BINARY_DIR}/conan_toolchain.cmake)
 
 file(GLOB_RECURSE SOURCES
     src/*.cpp
 )
 
-find_package(fmt CONFIG REQUIRED)
+find_package(fmt REQUIRED)
 
 add_executable(${PROJECT_NAME} ${SOURCES})
 target_link_libraries(${PROJECT_NAME} PRIVATE fmt::fmt)
