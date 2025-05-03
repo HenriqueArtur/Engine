@@ -21,6 +21,19 @@ jobs:
           sudo apt update
           sudo apt install -y clang-tidy
 
+      - name: Install Conan
+        run: |
+          sudo apt update
+          sudo apt install -y python3-pip
+          pip3 install conan
+
+      - name: Setup Conan profile
+        run: conan profile detect --force
+
+      - name: Install dependencies with Conan
+        run: |
+          conan install . --build=missing
+
       # Run linting
       - name: Run lint checks
         run: |
