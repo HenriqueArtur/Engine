@@ -48,3 +48,6 @@ vcpkg_installed/
 # System files
 .DS_Store
 Thumbs.db
+
+# cmake &  conan
+fixes.yaml

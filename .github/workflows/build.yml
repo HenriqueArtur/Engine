@@ -1,0 +1,41 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Install dependencies
+      - name: Install Cmake
+        run: |
+          sudo apt update
+          sudo apt install -y cmake
+
+      - name: Install Conan
+        run: |
+          sudo apt update
+          sudo apt install -y python3-pip
+          pip3 install conan
+
+      - name: Setup Conan profile
+        run: conan profile detect --force
+
+      - name: Install dependencies with Conan
+        run: |
+          conan install . --build=missing
+
+      # Build the project
+      - name: Build project
+        run: |
+          chmod +x ./scripts/build.sh
+          ./scripts/build.sh
