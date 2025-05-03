@@ -10,5 +10,10 @@ mkdir build
 conan install . --output-folder=build --build=missing
 
 # Configure and build with CMake
-cmake -B build -S . -DCMAKE_TOOLCHAIN_FILE=build/conan_toolchain.cmake
+cmake -B build \
+  -DCMAKE_BUILD_TYPE=Release \
+  -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
+  -DCMAKE_CXX_STANDARD=20 \
+  -DCMAKE_CXX_COMPILER=clang++
+
 cmake --build build
