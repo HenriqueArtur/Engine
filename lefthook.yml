@@ -1,5 +1,5 @@
 pre-push:
-  parallel: true
+  parallel: false
   commands:
     format:
       run: sh ./scripts/format.sh
