@@ -1,0 +1,28 @@
+name: Format
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Install dependencies
+      - name: Install dependencies
+        run: |
+          sudo apt update
+          sudo apt install -y clang-format
+
+      # Run formatting checks
+      - name: Run format checks
+        run: |
+          chmod +x ./scripts/format.sh
+          ./scripts/format.sh
