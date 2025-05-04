@@ -13,6 +13,7 @@ endif()
 
 include(${CMAKE_BINARY_DIR}/conan_toolchain.cmake OPTIONAL)
 find_package(fmt REQUIRED)
+find_package(SFML COMPONENTS system window graphics REQUIRED)
 
 file(GLOB_RECURSE SOURCES
     src/*.cpp
@@ -20,4 +21,10 @@ file(GLOB_RECURSE SOURCES
 
 add_executable(${PROJECT_NAME} ${SOURCES})
 
-target_link_libraries(${PROJECT_NAME} PRIVATE fmt::fmt)
+target_link_libraries(${PROJECT_NAME}
+    PRIVATE
+        fmt::fmt
+        sfml-system
+        sfml-window
+        sfml-graphics
+)

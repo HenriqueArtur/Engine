@@ -14,6 +14,7 @@ cmake -B build \
   -DCMAKE_BUILD_TYPE=Release \
   -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
   -DCMAKE_CXX_STANDARD=20 \
-  -DCMAKE_CXX_COMPILER=clang++
+  -DCMAKE_CXX_COMPILER=clang++ \
+  -DCMAKE_TOOLCHAIN_FILE=build/conan_toolchain.cmake
 
 cmake --build build
