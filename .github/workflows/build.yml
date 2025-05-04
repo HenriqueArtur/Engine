@@ -20,30 +20,15 @@ jobs:
         run: |
           sudo apt update
           sudo apt install -y \
-            cmake \
-            libxrandr-dev \
-            libxcursor-dev \
-            libudev-dev \
-            libopenal-dev \
-            libflac-dev \
-            libvorbis-dev \
-            libgl1-mesa-dev \
-            libegl1-mesa-dev \
-            libdrm-dev \
-            libgbm-dev
+            cmake 
 
       - name: Install Conan
         run: |
-          sudo apt update
           sudo apt install -y python3-pip
           pip3 install conan
 
       - name: Setup Conan profile
         run: conan profile detect --force
-
-      - name: Install dependencies with Conan
-        run: |
-          conan install . --build=missing
 
       # Build the project
       - name: Build project

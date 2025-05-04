@@ -7,7 +7,7 @@ fi
 mkdir build
 
 # Install dependencies with Conan
-conan install . --output-folder=build --build=missing
+conan install . --output-folder=build --build=missing -c tools.system.package_manager:mode=install
 
 # Configure and build with CMake
 cmake -B build \
