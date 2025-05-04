@@ -20,7 +20,56 @@ jobs:
         run: |
           sudo apt update
           sudo apt install -y \
-            cmake 
+            cmake \
+            libxrandr-dev \
+            libxcursor-dev \
+            libudev-dev \
+            libopenal-dev \
+            libflac-dev \
+            libvorbis-dev \
+            libgl1-mesa-dev \
+            libegl1-mesa-dev \
+            libdrm-dev \
+            libgbm-dev \
+            libx11-xcb-dev \
+            libfontenc-dev \
+            libice-dev \
+            libsm-dev \
+            libxaw7-dev \
+            libxcomposite-dev \
+            libxdamage-dev \
+            libxi-dev \
+            libxinerama-dev \
+            libxkbfile-dev \
+            libxmu-dev \
+            libxmuu-dev \
+            libxpm-dev \
+            libxres-dev \
+            libxss-dev \
+            libxt-dev \
+            libxtst-dev \
+            libxv-dev \
+            libxxf86vm-dev \
+            libxcb-glx0-dev \
+            libxcb-render0-dev \
+            libxcb-render-util0-dev \
+            libxcb-xkb-dev \
+            libxcb-icccm4-dev \
+            libxcb-image0-dev \
+            libxcb-keysyms1-dev \
+            libxcb-randr0-dev \
+            libxcb-shape0-dev \
+            libxcb-sync-dev \
+            libxcb-xfixes0-dev \
+            libxcb-xinerama0-dev \
+            libxcb-dri3-dev \
+            uuid-dev \
+            libxcb-cursor-dev \
+            libxcb-dri2-0-dev \
+            libxcb-present-dev \
+            libxcb-composite0-dev \
+            libxcb-ewmh-dev \
+            libxcb-res0-dev
 
       - name: Install Conan
         run: |
